@@ -65,7 +65,7 @@ namespace WindowsFormsApplication16
         static string getTokens(string s)
         {   int INDEX=0;        //index of the sting
             string output="";
-            
+            s = s + "       ";
             while(INDEX<s.Length)
             {
           
@@ -76,7 +76,7 @@ namespace WindowsFormsApplication16
                     //if i
                     if (s[INDEX] == 'i')
                     {
-                        if (s.Substring(INDEX, 2) == "if")
+                        if (s.Substring(INDEX, 2) == "if"&&!char.IsLetter(s,INDEX+2))
                         {
                             output = output + "if,resevered word" + System.Environment.NewLine;
                             INDEX = INDEX + 2;
@@ -98,7 +98,7 @@ namespace WindowsFormsApplication16
                         //if t
                     else if (s[INDEX] == 't')
                     {
-                        if (s.Substring(INDEX, 4) == "then")
+                        if (s.Substring(INDEX, 4) == "then" && !char.IsLetter(s, INDEX + 4))
                         {
                             output = output + "then,resevered word" + System.Environment.NewLine;
                             INDEX = INDEX + 4;
@@ -119,12 +119,12 @@ namespace WindowsFormsApplication16
                         //if e
                     else if (s[INDEX] == 'e')
                     {
-                        if (s.Substring(INDEX, 4) == "else")
+                        if (s.Substring(INDEX, 4) == "else" && !char.IsLetter(s, INDEX + 4))
                         {
                             output = output + "else,resevered word" + System.Environment.NewLine;
                             INDEX = INDEX + 4;
                         }
-                        else if (s.Substring(INDEX, 3) == "end")
+                        else if (s.Substring(INDEX, 3) == "end" && !char.IsLetter(s, INDEX + 3))
                         {
                             output = output + "end,resevered word" + System.Environment.NewLine;
                             INDEX = INDEX + 3;
@@ -144,7 +144,7 @@ namespace WindowsFormsApplication16
                         //if r
                     else if (s[INDEX] == 'r')
                     {
-                        if (s.Substring(INDEX, 4) == "read")
+                        if (s.Substring(INDEX, 4) == "read" && !char.IsLetter(s, INDEX + 4))
                         {
                             output = output + "read,resevered word" + System.Environment.NewLine;
                             INDEX = INDEX + 4;
@@ -170,7 +170,7 @@ namespace WindowsFormsApplication16
                         //if u
                     else if (s[INDEX] == 'u')
                     {
-                        if (s.Substring(INDEX, 5) == "until")
+                        if (s.Substring(INDEX, 5) == "until" && !char.IsLetter(s, INDEX + 5))
                         {
                             output = output + "until,resevered word" + System.Environment.NewLine;
                             INDEX = INDEX + 5;
@@ -191,7 +191,7 @@ namespace WindowsFormsApplication16
                         //if w
                     else if (s[INDEX] == 'w')
                     {
-                        if (s.Substring(INDEX, 5) == "write")
+                        if (s.Substring(INDEX, 5) == "write" && !char.IsLetter(s, INDEX + 5))
                         {
                             output = output + "then,resevered word" + System.Environment.NewLine;
                             INDEX = INDEX + 5;
