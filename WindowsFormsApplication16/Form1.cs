@@ -28,19 +28,22 @@ namespace WindowsFormsApplication16
         //Open Button
         private void Open_Click(object sender, EventArgs e)
         {
-           
-            File_Name.Visible = true;
-            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                File_Name.Text = openFileDialog1.FileName;      //Write file name in the label under the button
-                File_Name.Visible = true;
-                File_str = File.ReadAllText(File_Name.Text);    //Write file content in a strinf     
-            }
-            output = getTokens(File_str);   //Scanning function
-            Save.Visible = true;            //Making save button visible
-            MessageBox.Show("Output File is Ready You can save it");
-         
+                openFileDialog1.FileName = "InputFile.txt";         //Defualt Name for input file
+                DialogResult result = openFileDialog1.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    File_Name.Text = openFileDialog1.FileName;      //Write file name in the label under the button
+                    File_Name.Visible = true;
+                    File_str = File.ReadAllText(File_Name.Text);    //Write file content in a string 
+                    output = getTokens(File_str);   //Scanning function
+                    Save.Visible = true;            //Making save button visible
+                    MessageBox.Show("Output File is Ready You can save it");
+
+                }
+
         }
+
+
 
 
         //Save button
